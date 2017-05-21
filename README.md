@@ -1,4 +1,4 @@
-# Data and materials from <br>"Comparing deep neural networks against humans: Object recognition when the signal gets weaker"
+# Data and materials from <br>"Comparing Deep Neural Networks against humans:<br> Object recognition when the signal gets weaker"
 
 This repository contains information, data and materials from the paper "Comparing deep neural networks against humans: Object recognition when the signal gets weaker" by Robert Geirhos, David H. J. Janssen, Heiko H. Schütt, Jonas Rauber, Matthias Bethge, and Felix A. Wichmann.
 
@@ -51,4 +51,4 @@ Some of the helper_functions are based on other people's code, please check out 
 #### response-screen-icons
 The response screen icons appeared on the response screen, and participants were instructed to click on the corresponding one. The icons were taken from the [MS COCO website](http://mscoco.org/explore/).
 
-![response screen icons](/home/robert/2_proj/vision-model/object-recognition/lab-experiment/response-screen-icons/response_screen.png  "response screen icons")
+![response screen icons](./lab-experiment/response-screen-icons/response_screen.png  "response screen icons")
