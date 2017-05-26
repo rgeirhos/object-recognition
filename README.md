@@ -22,7 +22,7 @@ Every .csv raw data file has a header with the **bold** categories below, here's
 - **condition:** short indicator of the condition of the presented stimulus. Color-experiment: \'cr\' for color, \'bw\' for grayscale images; contrast-experiment: \'c100\', \'c50\', ... \'c01\' for 100%, 50%, ... 1% nominal contrast; noise-experiment: \'0\', \'0.03\', ... \'0.9\' for noise width; eidolon-experiment: in the form \'a-b-c\', indicating:
 	- a is the parameter value for \'reach\', in {1,2,4,8,...128} 
 	- b in {0,3,10} for coherence value of 0.0, 0.3, or 1.0
-	- c = 10 for grain value of 10 (not varied in this experiment)
+	- c = 10 for grain value of 10.0 (not varied in this experiment)
 
 - **imagename:**
 
@@ -32,9 +32,9 @@ This is a concatenation of the following information (separated by \'_\'):
 
 1. a four-digit number starting with 0000 for the first image in an experiment; the last image therefore has the number n-1 if n is the number of images in a certain experiment
 2. short code for experiment name, e.g. \'eid\' for eidolon-experiment
-3. either e.g. \'s01\' for subject-01, or \'dnn\' for DNNs
+3. either e.g. \'s01\' for \'subject-01\', or \'dnn\' for DNNs
 4. condition
-5. category
+5. category (ground truth)
 6. image identifier in the form a_b.JPEG, with _a_ being the WNID (WordNet ID) of the corresponding synset and _b_ being an integer.
 
 ## images
