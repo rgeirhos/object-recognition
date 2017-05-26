@@ -7,7 +7,7 @@ Please don't hesitate to contact me at robert.geirhos@uni-tuebingen.de or open a
 ## raw-data
 Every .csv raw data file has a header with the **bold** categories below, here's what they stand for:
 
-- **subj:** for DNNs, name of network; for human observers: number of subject. This number is consistent across experiments. Note that the subjects were not necessarily given consecutive numbers, therefore it can be the case that \'subject-04\' does not exist in some or all experiments.
+- **subj:** for DNNs (Deep Neural Networks), name of network; for human observers: number of subject. This number is consistent across experiments. Note that the subjects were not necessarily given consecutive numbers, therefore it can be the case that \'subject-04\' does not exist in some or all experiments.
 
 - **session:** session number
 
