@@ -20,7 +20,7 @@ Every .csv raw data file has a header with the **bold** categories below, here's
 - **category:** the presented category
 
 - **condition:** short indicator of the condition of the presented stimulus. Color-experiment: \'cr\' for color, \'bw\' for grayscale images; contrast-experiment: \'c100\', \'c50\', ... \'c01\' for 100%, 50%, ... 1% nominal contrast; noise-experiment: \'0\', \'0.03\', ... \'0.9\' for noise width; eidolon-experiment: in the form \'a-b-c\', indicating:
-	- a is the parameter value for \’reach\', in {1,2,4,8,...128} 
+	- a is the parameter value for \'reach\', in {1,2,4,8,...128} 
 	- b in {0,3,10} for coherence value of 0.0, 0.3, or 1.0
 	- c = 10 for grain value of 10 (not varied in this experiment)
 
@@ -38,7 +38,7 @@ This is a concatenation of the following information (separated by \'_\'):
 6. image identifier in the form a_b.JPEG, with _a_ being the WNID (WordNet ID) of the corresponding synset and _b_ being an integer.
 
 ## images
-We preprocessed images from the ILSVRC2012 training database as described in the paper (e.g. we excluded grayscale images). In total we retained 213,555 images. The \'images/\' directory contains a .txt file with the final image names (the ones that were retained). If you would like to obtain the images, have a look at the [ImageNet website](http://image-net.org/download.php).
+We preprocessed images from the ILSVRC2012 training database as described in the paper (e.g. we excluded grayscale images). In total we retained 213,555 images. The \'images/\' directory contains a .txt file with the final image names (the ones that were retained). If you would like to obtain the images, check out the [ImageNet website](http://image-net.org/download.php). In every experiment, the number of presented images for every entry-level MS COCO category (e.g. dog, car, boat, ...) were exactly the same.
 
 ## lab-experiment
 
