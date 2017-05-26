@@ -118,14 +118,6 @@ def is_in_bounds(mat, low, high):
     return np.all(np.logical_and(mat >= 0, mat <= 1))
 
 
-def eidolon_partially_coherent_disarray(image, reach, coherence, grain):
-    """Return...
-
-
-    """
-    return wr.partially_coherent_disarray(wr.data_to_pic(image),
-                                          reach, coherence, grain)
-
 ###########################################################
 #   MAIN METHOD FOR TESTING & DEMONSTRATION PURPOSES
 ###########################################################
