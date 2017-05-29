@@ -4,6 +4,18 @@
 A small set of functions used to make the eidolon factory code a little easier
 to integrate and work with.
 
+The 'eidolon factory' can be obtained from here:
+https://github.com/gestaltrevision/Eidolon
+
+Note that the Python version likely contains a bug, for which we opened
+a pull request with a bugfix on 3rd August 2016 (#1). The bugfix
+has not (yet?) been merged as of May 2017, so you'll need to manually
+replace the files from the pull request.
+
+The corresponding paper ("Eidolons: Novel stimuli for vision research")
+can be obtained here:
+http://jov.arvojournals.org/article.aspx?articleid=2603227
+
 """
 from __future__ import division
 
@@ -13,10 +25,13 @@ import numpy as np
 import os
 from skimage.io import imsave
 
-from pydnn.eidolon import picture as pic
-from pydnn.eidolon import helpers as hel
-from pydnn.eidolon import scalespaces as scl
-from pydnn.eidolon import noise as noi
+# you'll need to include the eidolon/ directory of the Eidolon
+# toolbox for these imports to work. See above for information on
+# how to obtain this.
+from eidolon import picture as pic
+from eidolon import helpers as hel
+from eidolon import scalespaces as scl
+from eidolon import noise as noi
 
 
 SZ = 256
