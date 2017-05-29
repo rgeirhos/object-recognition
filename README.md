@@ -4,6 +4,11 @@ This repository contains information, data and materials from the paper "Compari
 
 Please don't hesitate to contact me at robert.geirhos@uni-tuebingen.de or open an issue in case there is any question!
 
+This README is structured according to the repo's structure: one header per subdirectory.
+
+## code
+This subdirectory contains all image manipulation code used in our experiments (conversion to grayscale, adding noise, eidolon distortions, ..). The main method of image-manipulation.py walks you through the various degradations. Note that the eidolon manipulation that we use in one of our experiments is based on the [Eidolon github repository](https://github.com/gestaltrevision/Eidolon), which you'll need to download / clone if you'd like to use it. Note that we found and fixed a bug in the Python version of the toolbox, for which we created a pull request in August 2016 which has not (yet?) been merged (as of May 2017). Make sure to collect the files from the pull request as well, otherwise you'll get different images!
+
 ## raw-data
 Every .csv raw data file has a header with the **bold** categories below, here's what they stand for:
 
