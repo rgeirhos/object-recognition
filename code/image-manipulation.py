@@ -5,6 +5,8 @@ from skimage.io import imread, imsave
 from scipy.misc import toimage
 import numpy as np
 
+import wrapper as wr
+
 ###########################################################
 #   IMAGE IO
 ###########################################################
@@ -13,6 +15,16 @@ def imload_rgb(path):
     """Load and return an RGB image in the range [0, 1]."""
 
     return imread(path) / 255.0
+
+
+def save_img(image, imgname, use_JPEG=False):
+    """Save image as either .jpeg or .png"""
+
+    if use_JPEG:
+        imsave(imgname+".JPEG", image) 
+    else:
+        toimage(image,
+                cmin=0.0, cmax=1.0).save(imgname+".png")
 
 
 ###########################################################
@@ -118,6 +130,14 @@ def is_in_bounds(mat, low, high):
     return np.all(np.logical_and(mat >= 0, mat <= 1))
 
 
+def eidolon_partially_coherent_disarray(image, reach, coherence, grain):
+    """Return...
+
+
+    """
+    return wr.partially_coherent_disarray(wr.data_to_pic(image),
+                                          reach, coherence, grain)
+
 ###########################################################
 #   MAIN METHOD FOR TESTING & DEMONSTRATION PURPOSES
 ###########################################################
@@ -136,12 +156,7 @@ if __name__ == "__main__":
     ###################################################
 
     img_grayscale = rgb2gray(img)
-    if use_JPEG:
-        imsave("test_image_grayscale.JPEG", img_grayscale) 
-    else:
-        toimage(img_grayscale,
-                cmin=0.0, cmax=1.0).save("test_image_grayscale.png")
-
+    save_img(img_grayscale, "test_image_grayscale", use_JPEG)
 
     ###################################################
     # B) Example for contrast-experiment:
@@ -152,12 +167,7 @@ if __name__ == "__main__":
     contrast_level_1 = 0.1 
     img_low_contrast = grayscale_contrast(image=img,
                                           contrast_level=contrast_level_1)
-    if use_JPEG:
-        imsave("test_image_low_contrast.JPEG", img_low_contrast) 
-    else:
-        toimage(img_low_contrast,
-                cmin=0.0, cmax=1.0).save("test_image_low_contrast.png")
-
+    save_img(img_low_contrast, "test_image_low_contrast", use_JPEG)
 
     ###################################################
     # C) Example for noise-experiment:
@@ -173,10 +183,17 @@ if __name__ == "__main__":
     img_noisy = uniform_noise(image=img, width=noise_width,
                               contrast_level=contrast_level_2,
                               rng=rng)
-    if use_JPEG:
-        imsave("test_image_noisy.JPEG", img_noisy) 
-    else:
-        toimage(img_noisy,
-                cmin=0.0, cmax=1.0).save("test_image_noisy.png")
+    save_img(img_noisy, "test_image_noisy", use_JPEG)
 
+    ###################################################
+    # D) Example for eidolon-experiment:
+    #    - use partially_coherent_disarray 
+    ###################################################
 
+    grain = 10.0
+    coherence = 1.0
+    reach = 8.0
+
+    img_eidolon = eidolon_partially_coherent_disarray(img, reach,
+                                                      coherence, grain) 
+    save_img(img_eidolon, "test_image_eidolon", use_JPEG)
