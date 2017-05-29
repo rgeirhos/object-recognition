@@ -64,6 +64,7 @@ def uniform_noise(image, width, contrast_level, rng):
     - width: a scalar indicating width of additive uniform noise
              -> then noise will be in range [-width, width]
     - contrast_level: a scalar in [0, 1]; with 1 -> full contrast
+    - rng: a np.random.RandomState(seed=XYZ) to make it reproducible
     """
 
     image = grayscale_contrast(image, contrast_level)
@@ -131,10 +132,18 @@ def is_in_bounds(mat, low, high):
 
 
 def eidolon_partially_coherent_disarray(image, reach, coherence, grain):
-    """Return...
+    """Return parametrically distorted images (produced by Eidolon factory.
 
+    For more information on the effect of different distortions, please
+    have a look at the paper: Koenderink et al., JoV 2017,
+    Eidolons: Novel stimuli for vision research).
 
+    - image: a numpy.ndarray
+    - reach: float, controlling the strength of the manipulation
+    - coherence: a float within [0, 1] with 1 = full coherence
+    - grain: float, controlling how fine-grained the distortion is
     """
+
     return wr.partially_coherent_disarray(wr.data_to_pic(image),
                                           reach, coherence, grain)
 
