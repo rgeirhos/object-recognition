@@ -9,6 +9,22 @@ This README is structured according to the repo's structure: one header per subd
 ## code
 This subdirectory contains all image manipulation code used in our experiments (conversion to grayscale, adding noise, eidolon distortions, ..). The main method of image-manipulation.py walks you through the various degradations. Note that the eidolon manipulation that we use in one of our experiments is based on the [Eidolon github repository](https://github.com/gestaltrevision/Eidolon), which you'll need to download / clone if you'd like to use it. Note that we found and fixed a bug in the Python version of the toolbox, for which we created a pull request in August 2016 which has not (yet?) been merged (as of May 2017). Make sure to collect the files from the pull request as well, otherwise you'll get different images!
 
+## images
+We preprocessed images from the ILSVRC2012 training database as described in the paper (e.g. we excluded grayscale images). In total we retained 213,555 images. The \'images/\' directory contains a .txt file with the final image names (the ones that were retained). If you would like to obtain the images, check out the [ImageNet website](http://image-net.org/download.php). In every experiment, the number of presented images for every entry-level MS COCO category (e.g. dog, car, boat, ...) were exactly the same.
+
+## lab-experiment
+
+#### experimental-code
+Contains the main .m MATLAB experiment as well as a .yaml file for every experiment. In the .yaml file, the specific parameter values used in an experiment are specified (such as the stimulus presentation duration). Some functions depend of our in-house iShow library which can be obtained from [here](http://dx.doi.org/10.5281/zenodo.34217).
+
+#### helper-functions
+Some of the helper_functions are based on other people's code, please check out the corresponding files for the copyright notices.
+
+#### response-screen-icons
+The response screen icons appeared on the response screen, and participants were instructed to click on the corresponding one. The icons were taken from the [MS COCO website](http://mscoco.org/explore/).
+
+![response screen icons](./lab-experiment/response-screen-icons/response_screen.png  "response screen icons")
+
 ## raw-data
 Every .csv raw data file has a header with the **bold** categories below, here's what they stand for:
 
@@ -42,18 +58,3 @@ This is a concatenation of the following information (separated by \'_\'):
 5. category (ground truth)
 6. image identifier in the form a_b.JPEG, with _a_ being the WNID (WordNet ID) of the corresponding synset and _b_ being an integer.
 
-## images
-We preprocessed images from the ILSVRC2012 training database as described in the paper (e.g. we excluded grayscale images). In total we retained 213,555 images. The \'images/\' directory contains a .txt file with the final image names (the ones that were retained). If you would like to obtain the images, check out the [ImageNet website](http://image-net.org/download.php). In every experiment, the number of presented images for every entry-level MS COCO category (e.g. dog, car, boat, ...) were exactly the same.
-
-## lab-experiment
-
-#### experimental-code
-Contains the main .m MATLAB experiment as well as a .yaml file for every experiment. In the .yaml file, the specific parameter values used in an experiment are specified (such as the stimulus presentation duration).
-
-#### helper-functions
-Some of the helper_functions are based on other people's code, please check out the corresponding files for the copyright notices.
-
-#### response-screen-icons
-The response screen icons appeared on the response screen, and participants were instructed to click on the corresponding one. The icons were taken from the [MS COCO website](http://mscoco.org/explore/).
-
-![response screen icons](./lab-experiment/response-screen-icons/response_screen.png  "response screen icons")
