@@ -15,7 +15,7 @@ We preprocessed images from the ILSVRC2012 training database as described in the
 ## lab-experiment
 
 #### experimental-code
-Contains the main .m MATLAB experiment as well as a .yaml file for every experiment. In the .yaml file, the specific parameter values used in an experiment are specified (such as the stimulus presentation duration). Some functions depend of our in-house iShow library which can be obtained from [here](http://dx.doi.org/10.5281/zenodo.34217).
+Contains the main .m MATLAB experiment as well as a .yaml file for every experiment. In the .yaml file, the specific parameter values used in an experiment are specified (such as the stimulus presentation duration). Some functions depend on our in-house iShow library which can be obtained from [here](http://dx.doi.org/10.5281/zenodo.34217).
 
 #### helper-functions
 Some of the helper_functions are based on other people's code, please check out the corresponding files for the copyright notices.
