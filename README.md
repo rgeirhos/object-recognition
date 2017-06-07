@@ -1,24 +1,27 @@
 # Data and materials from <br>"Comparing Deep Neural Networks against humans:<br> Object recognition when the signal gets weaker"
 
-This repository contains information, data and materials from the paper "Comparing deep neural networks against humans: Object recognition when the signal gets weaker" by Robert Geirhos, David H. J. Janssen, Heiko H. Schütt, Jonas Rauber, Matthias Bethge, and Felix A. Wichmann.
+This repository contains information, data and materials from the paper "Comparing Deep Neural Networks against humans: Object recognition when the signal gets weaker" by Robert Geirhos, David H. J. Janssen, Heiko H. Schütt, Jonas Rauber, Matthias Bethge, and Felix A. Wichmann.
 
 Please don't hesitate to contact me at robert.geirhos@uni-tuebingen.de or open an issue in case there is any question!
 
 This README is structured according to the repo's structure: one header per subdirectory.
 
 ## code
-This subdirectory contains all image manipulation code used in our experiments (conversion to grayscale, adding noise, eidolon distortions, ..). The main method of image-manipulation.py walks you through the various degradations. Note that the eidolon manipulation that we use in one of our experiments is based on the [Eidolon github repository](https://github.com/gestaltrevision/Eidolon), which you'll need to download / clone if you'd like to use it. Note that we found and fixed a bug in the Python version of the toolbox, for which we created a pull request in August 2016 which has not (yet?) been merged (as of May 2017). Make sure to collect the files from the pull request as well, otherwise you'll get different images!
+This subdirectory contains all image manipulation code used in our experiments (conversion to grayscale, adding noise, eidolon distortions, ..). The main method of `image-manipulation.py` walks you through the various degradations. Note that the eidolon manipulation that we use in one of our experiments is based on the [Eidolon github repository](https://github.com/gestaltrevision/Eidolon), which you will need to download / clone if you would like to use it. Note that we found and fixed a bug in the Python version of the toolbox, for which we created a pull request in August 2016 which has not (yet?) been merged (as of May 2017). Make sure to collect the files from the pull request as well, otherwise you'll get different images!
+
+## data-analysis
+The `data-analysis/` subdirectory contains a main R script, `data-analysis.R`, which can be used to plot and analyze the data contained in `raw-data/`. We used R version 3.2.3 for the data analysis.
 
 ## images
-We preprocessed images from the ILSVRC2012 training database as described in the paper (e.g. we excluded grayscale images). In total we retained 213,555 images. The \'images/\' directory contains a .txt file with the final image names (the ones that were retained). If you would like to obtain the images, check out the [ImageNet website](http://image-net.org/download.php). In every experiment, the number of presented images for every entry-level MS COCO category (e.g. dog, car, boat, ...) were exactly the same.
+We preprocessed images from the ILSVRC2012 training database as described in the paper (e.g. we excluded grayscale images). In total we retained 213,555 images. The `images/` directory contains a .txt file with the final image names (the ones that were retained). If you would like to obtain the images, check out the [ImageNet website](http://image-net.org/download.php). In every experiment, the number of presented images for every entry-level MS COCO category (e.g. dog, car, boat, ...) were exactly the same.
 
 ## lab-experiment
 
 #### experimental-code
-Contains the main .m MATLAB experiment as well as a .yaml file for every experiment. In the .yaml file, the specific parameter values used in an experiment are specified (such as the stimulus presentation duration). Some functions depend on our in-house iShow library which can be obtained from [here](http://dx.doi.org/10.5281/zenodo.34217).
+Contains the main MATLAB experiment, `object_recognition_experiment.m`, as well as a `.yaml` file for every experiment. In the `.yaml` file, the specific parameter values used in an experiment are specified (such as the stimulus presentation duration). Some functions depend on our in-house iShow library which can be obtained from [here](http://dx.doi.org/10.5281/zenodo.34217).
 
 #### helper-functions
-Some of the helper_functions are based on other people's code, please check out the corresponding files for the copyright notices.
+Some of the helper functions are based on other people's code, please check out the corresponding files for the copyright notices.
 
 #### response-screen-icons
 The response screen icons appeared on the response screen, and participants were instructed to click on the corresponding one. The icons were taken from the [MS COCO website](http://mscoco.org/explore/).
@@ -26,7 +29,7 @@ The response screen icons appeared on the response screen, and participants were
 ![response screen icons](./lab-experiment/response-screen-icons/response_screen.png  "response screen icons")
 
 ## raw-data
-Every .csv raw data file has a header with the **bold** categories below, here's what they stand for:
+Every `.csv` raw data file has a header with the **bold** categories below, here's what they stand for:
 
 - **subj:** for DNNs (Deep Neural Networks), name of network; for human observers: number of subject. This number is consistent across experiments. Note that the subjects were not necessarily given consecutive numbers, therefore it can be the case that \'subject-04\' does not exist in some or all experiments.
 
@@ -47,7 +50,7 @@ Every .csv raw data file has a header with the **bold** categories below, here's
 
 - **imagename:**
 
-e.g. 3841_eid_dnn_1-0-10_knife_10_n03041632_32377.JPEG
+e.g. `3841_eid_dnn_1-0-10_knife_10_n03041632_32377.JPEG`
 
 This is a concatenation of the following information (separated by \'_\'):
 
