@@ -468,3 +468,51 @@ is.in.CI = function(a.num.successes, a.total,
     return(0)
   }
 }
+
+get.accuracy = function(dat) {
+  # Return data.frame with x and y for condition and accuracy.
+  
+  tab = table(dat$is.correct, by=dat$condition)
+  false.index = 1
+  true.index = 2
+  acc = tab[true.index, ] / (tab[false.index, ]+tab[true.index, ])
+  d = as.data.frame(acc)
+  
+  if(length(colnames(tab)) != length(unique(dat$condition))) {
+    stop("Error in get.accuracy: length mismatch.")
+  }
+  
+  #enforce numeric ordering instead of alphabetic (otherwise problem: 100 before 20)
+  if(!is.factor(dat$condition)) {
+    #condition is numeric
+    d$order = row.names(d)
+    d$order = as.numeric(d$order)
+    d = d[with(d, order(d$order)), ]
+    d$order = NULL
+    e = data.frame(x = as.numeric(row.names(d)), y=100*d[ , ])
+  } else {
+    #condition is non-numeric
+    e = data.frame(x = row.names(d), y=100*d[ , ])
+  }
+  return(e)
+}
+
+
+print.accuracies.to.file = function(dat, path="./", filename=paste(path, unique(dat$experiment.name),
+                                                        "_accuracies.txt", sep="")) {
+  # print a .txt file with a table of all accuracies for a certain experiment
+  # (split by experimental condition and subject/network)
+  
+  colnames.here = c("condition", "human_observers(average)")
+  acc = get.accuracy(dat[dat$is.human==TRUE, ])
+  for(subj in get.all.subjects(dat, avg.human.data = TRUE)) {
+    if(subj$data.name %in% NETWORKS) {
+      acc = cbind(acc, get.accuracy(dat[dat$subj==subj$data.name, ])$y)
+      colnames.here = c(colnames.here, subj$name)
+    }
+  }
+  colnames(acc) = colnames.here
+  write.table(acc,
+              filename, sep=" ",
+              row.names = FALSE)
+}

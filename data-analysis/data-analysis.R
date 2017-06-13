@@ -33,6 +33,7 @@ contrastpngdat$condition = as.character(as.numeric(contrastpngdat$condition)) # 
 noisedat = get.expt.data("noise-experiment")
 noisedat$condition = as.character(noisedat$condition)
 noisedat$condition = lapply(noisedat$condition, function(y){if(y=="0"){return("0.0")}else{return(substring(y, 2))}})
+noisedat$condition = as.character(noisedat$condition)
 
 # preprocessing eidolon-experiment
 eidolondat = get.expt.data("eidolon-experiment")
@@ -60,3 +61,14 @@ difference.matrix(colordat[colordat$condition=="color" & colordat$is.human==TRUE
                   main = "Confusion difference matrix: color-experiment, color-condition, human vs. VGG-16",
                   divide.alpha.by = 16.0*17.0, # 16 columns * 17 rows
                   binomial = TRUE)
+
+###################################################################
+#               print accuracies to .txt file
+###################################################################
+
+accuracy.printing.path = "../raw-accuracies/"
+print.accuracies.to.file(colordat, path=accuracy.printing.path)
+print.accuracies.to.file(contrastdat, path=accuracy.printing.path)
+print.accuracies.to.file(contrastpngdat, path=accuracy.printing.path)
+print.accuracies.to.file(noisedat, path=accuracy.printing.path)
+print.accuracies.to.file(eidolondat, path=accuracy.printing.path)

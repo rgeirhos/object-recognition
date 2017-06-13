@@ -4,10 +4,10 @@ This repository contains information, data and materials from the paper "Compari
 
 Please don't hesitate to contact me at robert.geirhos@uni-tuebingen.de or open an issue in case there is any question!
 
-This README is structured according to the repo's structure: one header per subdirectory.
+This README is structured according to the repo's structure: one section per subdirectory.
 
 ## code
-This subdirectory contains all image manipulation code used in our experiments (conversion to grayscale, adding noise, eidolon distortions, ..). The main method of `image-manipulation.py` walks you through the various degradations. Note that the eidolon manipulation that we use in one of our experiments is based on the [Eidolon github repository](https://github.com/gestaltrevision/Eidolon), which you will need to download / clone if you would like to use it. Note that we found and fixed a bug in the Python version of the toolbox, for which we created a pull request in August 2016 which has not (yet?) been merged (as of May 2017). Make sure to collect the files from the pull request as well, otherwise you'll get different images!
+This subdirectory contains all image manipulation code used in our experiments (conversion to grayscale, adding noise, eidolon distortions, ..). The main method of `image-manipulation.py` walks you through the various degradations. Note that the eidolon manipulation that we use in one of our experiments is based on the [Eidolon github repository](https://github.com/gestaltrevision/Eidolon), which you will need to download / clone if you would like to use it. Note that we found and fixed a bug in the Python version of the toolbox, for which we created a pull request in August 2016 which has not (yet?) been merged (as of May 2017). Make sure to collect the files from the pull request as well, otherwise you will get different images!
 
 ## data-analysis
 The `data-analysis/` subdirectory contains a main R script, `data-analysis.R`, which can be used to plot and analyze the data contained in `raw-data/`. We used R version 3.2.3 for the data analysis.
@@ -28,10 +28,13 @@ The response screen icons appeared on the response screen, and participants were
 
 ![response screen icons](./lab-experiment/response-screen-icons/response_screen.png  "response screen icons")
 
+## raw-accuracies
+The `raw-accuracies/`directory contains a `.txt` file for each experiment with a table of all accuracies (split by experimental condition and subject/network). This therefore contains the underlying data used for all accuracy plots in the paper, and may be useful, for example, if one would like to generate new plots for comparing other networks to our human observers' accuracies.
+
 ## raw-data
 Every `.csv` raw data file has a header with the **bold** categories below, here's what they stand for:
 
-- **subj:** for DNNs (Deep Neural Networks), name of network; for human observers: number of subject. This number is consistent across experiments. Note that the subjects were not necessarily given consecutive numbers, therefore it can be the case that \'subject-04\' does not exist in some or all experiments.
+- **subj:** for DNNs (Deep Neural Networks), name of network; for human observers: number of subject. This number is consistent across experiments. Note that the subjects were not necessarily given consecutive numbers, therefore it can be the case that e.g. \'subject-04\' does not exist in some or all experiments.
 
 - **session:** session number
 
@@ -59,5 +62,6 @@ This is a concatenation of the following information (separated by \'_\'):
 3. either e.g. \'s01\' for \'subject-01\', or \'dnn\' for DNNs
 4. condition
 5. category (ground truth)
-6. image identifier in the form a_b.JPEG, with _a_ being the WNID (WordNet ID) of the corresponding synset and _b_ being an integer.
+6. a number (just ignore it)
+7. image identifier in the form a_b.JPEG, with _a_ being the WNID (WordNet ID) of the corresponding synset and _b_ being an integer.
 
