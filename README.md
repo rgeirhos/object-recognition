@@ -29,7 +29,7 @@ The response screen icons appeared on the response screen, and participants were
 ![response screen icons](./lab-experiment/response-screen-icons/response_screen.png  "response screen icons")
 
 ## raw-accuracies
-The `raw-accuracies/`directory contains a `.txt` file for each experiment with a table of all accuracies (split by experimental condition and subject/network). This therefore contains the underlying data used for all accuracy plots in the paper, and may be useful, for example, if one would like to generate new plots for comparing other networks to our human observers' accuracies.
+The `raw-accuracies/` directory contains a `.txt` file for each experiment with a table of all accuracies (split by experimental condition and subject/network). This therefore contains the underlying data used for all accuracy plots in the paper, and may be useful, for example, if one would like to generate new plots for comparing other networks to our human observers' accuracies. Note that all accuracies reported in these files are percentages.
 
 ## raw-data
 Every `.csv` raw data file has a header with the **bold** categories below, here's what they stand for:
