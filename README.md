@@ -1,13 +1,16 @@
-# Data and materials from <br>"Comparing Deep Neural Networks against humans:<br> Object recognition when the signal gets weaker"
+# Data and materials from <br>"Comparing deep neural networks against humans:<br> object recognition when the signal gets weaker"
 
-This repository contains information, data and materials from the paper "Comparing Deep Neural Networks against humans: Object recognition when the signal gets weaker" by Robert Geirhos, David H. J. Janssen, Heiko H. Schütt, Jonas Rauber, Matthias Bethge, and Felix A. Wichmann.
+This repository contains information, data and materials from the paper "Comparing deep neural networks against humans: object recognition when the signal gets weaker" by Robert Geirhos, David H. J. Janssen, Heiko H. Schütt, Jonas Rauber, Matthias Bethge, and Felix A. Wichmann.
 
 Please don't hesitate to contact me at robert.geirhos@uni-tuebingen.de or open an issue in case there is any question!
 
-This README is structured according to the repo's structure: one section per subdirectory.
+This README is structured according to the repo's structure: one section per subdirectory (alphabetically).
+
+## category-mapping
+Contains a `.txt` file with a mapping from all 16 employed entry-level MS COCO categories to the corresponding (fine-grained) ImageNet classes. Further information is provided in the file itself.
 
 ## code
-This subdirectory contains all image manipulation code used in our experiments (conversion to grayscale, adding noise, eidolon distortions, ..). The main method of `image-manipulation.py` walks you through the various degradations. Note that the eidolon manipulation that we use in one of our experiments is based on the [Eidolon github repository](https://github.com/gestaltrevision/Eidolon), which you will need to download / clone if you would like to use it. Note that we found and fixed a bug in the Python version of the toolbox, for which we created a pull request in August 2016 which has not (yet?) been merged (as of May 2017). Make sure to collect the files from the pull request as well, otherwise you will get different images!
+This subdirectory contains all image manipulation code used in our experiments (conversion to grayscale, adding noise, eidolon distortions, ..). The main method of `image-manipulation.py` walks you through the various degradations. Note that the eidolon manipulation that we use in one of our experiments is based on the [Eidolon github repository](https://github.com/gestaltrevision/Eidolon), which you will need to download / clone if you would like to use it. We found and fixed a bug in the Python version of the toolbox, for which we created a pull request in August 2016 which has not (yet?) been merged (as of May 2017). Make sure to collect the files from the pull request as well, otherwise you will get different images!
 
 ## data-analysis
 The `data-analysis/` subdirectory contains a main R script, `data-analysis.R`, which can be used to plot and analyze the data contained in `raw-data/`. We used R version 3.2.3 for the data analysis.
@@ -32,7 +35,7 @@ The response screen icons appeared on the response screen, and participants were
 The `raw-accuracies/` directory contains a `.txt` file for each experiment with a table of all accuracies (split by experimental condition and subject/network). This therefore contains the underlying data used for all accuracy plots in the paper, and may be useful, for example, if one would like to generate new plots for comparing other networks to our human observers' accuracies. Note that all accuracies reported in these files are percentages.
 
 ## raw-data
-Every `.csv` raw data file has a header with the **bold** categories below, here's what they stand for:
+This directory contains the raw data for all experiments reported in the paper, including a total number of 39,680 human trials in a controlled lab setting. Every `.csv` raw data file has a header with the **bold** categories below, here's what they stand for:
 
 - **subj:** for DNNs (Deep Neural Networks), name of network; for human observers: number of subject. This number is consistent across experiments. Note that the subjects were not necessarily given consecutive numbers, therefore it can be the case that e.g. \'subject-04\' does not exist in some or all experiments.
 
