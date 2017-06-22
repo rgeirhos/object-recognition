@@ -2,6 +2,8 @@
 
 This repository contains information, data and materials from the paper "Comparing deep neural networks against humans: object recognition when the signal gets weaker" by Robert Geirhos, David H. J. Janssen, Heiko H. Schütt, Jonas Rauber, Matthias Bethge, and Felix A. Wichmann.
 
+The article is available at [https://arxiv.org/abs/1706.06969](https://arxiv.org/abs/1706.06969).
+
 Please don't hesitate to contact me at robert.geirhos@uni-tuebingen.de or open an issue in case there is any question!
 
 This README is structured according to the repo's structure: one section per subdirectory (alphabetically).
@@ -10,7 +12,7 @@ This README is structured according to the repo's structure: one section per sub
 Contains a `.txt` file with a mapping from all 16 employed entry-level MS COCO categories to the corresponding (fine-grained) ImageNet classes. Further information is provided in the file itself.
 
 ## code
-This subdirectory contains all image manipulation code used in our experiments (conversion to grayscale, adding noise, eidolon distortions, ..). The main method of `image-manipulation.py` walks you through the various degradations. Note that the eidolon manipulation that we use in one of our experiments is based on the [Eidolon github repository](https://github.com/gestaltrevision/Eidolon), which you will need to download / clone if you would like to use it. We found and fixed a bug in the Python version of the toolbox, for which we created a pull request in August 2016 which has not (yet?) been merged (as of May 2017). Make sure to collect the files from the pull request as well, otherwise you will get different images!
+This subdirectory contains all image manipulation code used in our experiments (conversion to grayscale, adding noise, eidolon distortions, ..). The main method of `image-manipulation.py` walks you through the various degradations. Note that the eidolon manipulation that we use in one of our experiments is based on the [Eidolon github repository](https://github.com/gestaltrevision/Eidolon), which you will need to download / clone if you would like to use it. We found and fixed a bug in the Python version of the toolbox, for which we created a pull request in August 2016 (`Fixed bug in partial coherence #1`) which has not (yet?) been merged (as of June 2017). Make sure to collect the files from the pull request as well, otherwise you will get different images!
 
 ## data-analysis
 The `data-analysis/` subdirectory contains a main R script, `data-analysis.R`, which can be used to plot and analyze the data contained in `raw-data/`. We used R version 3.2.3 for the data analysis.
