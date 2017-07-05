@@ -497,6 +497,16 @@ get.accuracy = function(dat) {
   return(e)
 }
 
+get.single.accuracy = function(dat) {
+  # Return accuracy for whatever data as a single value.
+  if(is.na(length(dat$is.correct)) | length(dat$is.correct)==0) {
+    return(NaN)
+  } else {
+    return(sum(dat$is.correct) / length(dat$is.correct))
+  }
+}
+
+
 
 print.accuracies.to.file = function(dat, path="./", filename=paste(path, unique(dat$experiment.name),
                                                         "_accuracies.txt", sep="")) {
