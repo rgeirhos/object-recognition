@@ -1,8 +1,11 @@
 # Data and materials from <br>"Comparing deep neural networks against humans:<br> object recognition when the signal gets weaker"
 
+[![DOI](https://zenodo.org/badge/91843628.svg)](https://zenodo.org/badge/latestdoi/91843628)
+
 This repository contains information, data and materials from the paper "Comparing deep neural networks against humans: object recognition when the signal gets weaker" by Robert Geirhos, David H. J. Janssen, Heiko H. Schütt, Jonas Rauber, Matthias Bethge, and Felix A. Wichmann.
 
 The article is available at [https://arxiv.org/abs/1706.06969](https://arxiv.org/abs/1706.06969).
+
 
 Please don't hesitate to contact me at robert.geirhos@uni-tuebingen.de or open an issue in case there is any question!
 
