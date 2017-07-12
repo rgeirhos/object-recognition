@@ -47,7 +47,7 @@ e10dat = get.eidolon.dat.preprocessed(eidolondat, 10) # coherence = 1.0
 #               confusion matrix plotting
 ###################################################################
 
-# Fig. 5a in the paper draft
+# Fig. 5a in the arXiv paper
 confusion.matrix(colordat[colordat$condition=="color" & colordat$is.human==TRUE, ],
                  main="Confusion matrix: color-experiment, color-condition, human observers")
 
@@ -55,7 +55,7 @@ confusion.matrix(colordat[colordat$condition=="color" & colordat$is.human==TRUE,
 #               confusion difference matrix plotting
 ###################################################################
 
-# Fig. 5b in the paper draft
+# Fig. 5b in the arXiv paper
 difference.matrix(colordat[colordat$condition=="color" & colordat$is.human==TRUE, ],
                   colordat[colordat$condition=="color" & colordat$subj=="vgg", ],
                   main = "Confusion difference matrix: color-experiment, color-condition, human vs. VGG-16",
