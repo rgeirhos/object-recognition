@@ -7,7 +7,7 @@ This repository contains information, data and materials from the paper "Compari
 The article is available at [https://arxiv.org/abs/1706.06969](https://arxiv.org/abs/1706.06969).
 
 
-Please don't hesitate to contact me at robert.geirhos@uni-tuebingen.de or open an issue in case there is any question!
+Please don't hesitate to contact me at robert.geirhos@bethgelab.org or open an issue in case there is any question!
 
 This README is structured according to the repo's structure: one section per subdirectory (alphabetically).
 
