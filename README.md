@@ -1,3 +1,6 @@
+### :tada: Update (Aug 2021): 
+Would you like to test how well your own model performs on challenging generalisation tests, and whether it might even match or outperform human observers? This has never been easier! The comprehensive toolbox at [bethgelab:model-vs-human](https://github.com/bethgelab/model-vs-human) supports all datasets reported here and comes with code to evaluate arbitrary PyTorch / TensorFlow models. Simply load your favourite models, hit run and get a full PDF report on generalisation behaviour including ready-to-use figures!
+
 # Data and materials from <br>"Comparing deep neural networks against humans:<br> object recognition when the signal gets weaker"
 
 [![DOI](https://zenodo.org/badge/91843628.svg)](https://zenodo.org/badge/latestdoi/91843628)
